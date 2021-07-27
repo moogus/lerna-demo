@@ -1,11 +1,11 @@
-import React from "react"
+import React from 'react'
 import { useRouter } from 'next/router'
 
-import { GridItemModel } from "@lerna-demo/utils-types"
+import { GridItemModel } from '@lerna-demo/utils-types'
 
 export interface GridItemProps {
-  gridItem: GridItemModel;
-};
+  gridItem: GridItemModel
+}
 
 import {
   GridContainer,
@@ -17,12 +17,12 @@ import {
   DescriptionText,
   PriceTextArea,
   BasicPriceText,
-} from "@lerna-demo/components-styled-atoms"
+} from '@lerna-demo/components-styled-atoms'
 
 export const GridItem = ({ gridItem }: GridItemProps) => {
   const router = useRouter()
 
-  const { productId, price, title, image } = gridItem;
+  const { productId, price, title, image } = gridItem
 
   return (
     <GridContainer
@@ -44,5 +44,5 @@ export const GridItem = ({ gridItem }: GridItemProps) => {
         </PriceTextArea>
       </GridInnerContainer>
     </GridContainer>
-  );
-};
+  )
+}

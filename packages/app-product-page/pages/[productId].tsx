@@ -1,7 +1,11 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 
-import { H1, PageContainer, NavigateBackButton } from '@lerna-demo/components-styled-atoms'
+import {
+  H1,
+  PageContainer,
+  NavigateBackButton,
+} from '@lerna-demo/components-styled-atoms'
 import { ApiProductModel, ProductModel } from '@lerna-demo/utils-types'
 
 import { PortraitProductSection } from '../components/PortraitProductSection'
@@ -12,11 +16,11 @@ interface ProductPageProps {
   loading: boolean
   product: ProductModel
   productId: string
-};
+}
 
-const Product = ({product}: ProductPageProps) => {
+const Product = ({ product }: ProductPageProps) => {
   const router = useRouter()
- 
+
   return (
     <PageContainer>
       <header>
@@ -34,10 +38,10 @@ const Product = ({product}: ProductPageProps) => {
         </section>
       </main>
     </PageContainer>
-  );
+  )
 }
 
-export const buildModel = (apiProduct:ApiProductModel):ProductModel => {
+export const buildModel = (apiProduct: ApiProductModel): ProductModel => {
   const {
     title,
     media,
@@ -46,12 +50,12 @@ export const buildModel = (apiProduct:ApiProductModel):ProductModel => {
     displaySpecialOffer,
     additionalServices,
     code,
-  } = apiProduct;
+  } = apiProduct
 
-  const { now } = price;
-  const { productInformation } = details;
-  const { images } = media;
-  const { altText, urls } = images;
+  const { now } = price
+  const { productInformation } = details
+  const { images } = media
+  const { altText, urls } = images
 
   return {
     title,
@@ -61,10 +65,10 @@ export const buildModel = (apiProduct:ApiProductModel):ProductModel => {
     displaySpecialOffer,
     additionalServices,
     code,
-  };
-};
+  }
+}
 
-export const getStaticPaths = async() => {
+export const getStaticPaths = async () => {
   return {
     paths: [
       '/product',
@@ -77,8 +81,8 @@ export const getStaticPaths = async() => {
 
 export const getStaticProps = async ({ params: { productId } }) => {
   const product = buildModel(data)
-   debugger
-  return { props: { loading: false, product, productId} }
+  debugger
+  return { props: { loading: false, product, productId } }
 }
 
 export default Product

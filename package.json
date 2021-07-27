@@ -7,25 +7,25 @@
   ],
   "scripts": {
     "eslint:check": "lerna run eslint:check",
+    "eslint:fix": "lerna run eslint:fix",
     "format:all": "lerna run format:all",
     "format:check": "lerna run format:check",
     "ts:check": "lerna run ts:check",
     "test": "yarn test:unit",
     "test:unit": "lerna run test:unit",
-    "husky-commit-msg": "lint-staged",
-    "husky-pre-push": "yarn ts:check && yarn test:unit",
+    "husky-pre-commit": "lint-staged",
+    "husky-pre-push": "yarn ts:check && yarn format:check && yarn eslint:fix && yarn test:unit",
     "dev": "lerna run dev",
     "build": "lerna run build",
-    "start": "lerna run start"
+    "start": "lerna run start",
+    "prepare": "husky install"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "*.{jsx,js,ts,tsx}": [
-      "eslint --fix",
-      "git add"
+      "eslint --fix"
     ]
   },
   "dependencies": {

@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import { ProductImage } from "../ProductImage"
-import { ProductDescription } from "../ProductDescription"
-import { ProductPrice } from "../ProductPrice"
+import { ProductImage } from '../ProductImage'
+import { ProductDescription } from '../ProductDescription'
+import { ProductPrice } from '../ProductPrice'
 
 import { AdditionalServices, Images } from '@lerna-demo/utils-types'
 import {
@@ -11,7 +11,7 @@ import {
   TextMarginContainer,
   GridContainer,
   LanscapeGridInnerContainer,
-} from "@lerna-demo/components-styled-atoms"
+} from '@lerna-demo/components-styled-atoms'
 
 interface LandscapeProductSectionProps {
   code: string
@@ -19,23 +19,22 @@ interface LandscapeProductSectionProps {
   media: Images
   price: string
   additionalServices: AdditionalServices
-};
+}
 
 export const LandscapeProductSection = ({
   code,
   productInformation,
   media,
   price,
-  additionalServices
+  additionalServices,
 }: LandscapeProductSectionProps) => {
-
   return (
     <div className="d-none d-lg-block -xl-block">
       <GridContainer>
         <LanscapeGridInnerContainer>
           <div className="row">
             <div className="col-8  pr-0">
-              <ProductImage media={media}/>
+              <ProductImage media={media} />
               <TextMarginContainer className="row">
                 <div className="col">
                   <H2>Product Information</H2>
@@ -47,17 +46,18 @@ export const LandscapeProductSection = ({
                 </div>
               </TextMarginContainer>
               <TextMarginContainer className="row">
-                <ProductDescription productInformation={productInformation}/>
+                <ProductDescription productInformation={productInformation} />
               </TextMarginContainer>
             </div>
             <div className="col-4 border-left">
-              <ProductPrice 
-                price={price} 
-                additionalServices={additionalServices}/>
+              <ProductPrice
+                price={price}
+                additionalServices={additionalServices}
+              />
             </div>
           </div>
         </LanscapeGridInnerContainer>
       </GridContainer>
     </div>
-  );
-};
+  )
+}

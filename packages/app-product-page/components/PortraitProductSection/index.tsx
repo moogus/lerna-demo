@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import { ProductImage } from "../ProductImage"
-import { ProductDescription } from "../ProductDescription"
-import { ProductPrice } from "../ProductPrice"
+import { ProductImage } from '../ProductImage'
+import { ProductDescription } from '../ProductDescription'
+import { ProductPrice } from '../ProductPrice'
 
 import { AdditionalServices, Images } from '@lerna-demo/utils-types'
 import {
@@ -20,25 +20,22 @@ interface PortraitProductSectionProps {
   media: Images
   price: string
   additionalServices: AdditionalServices
-};
+}
 
-export const PortraitProductSection = ({ 
+export const PortraitProductSection = ({
   code,
   productInformation,
   media,
   price,
-  additionalServices
- }: PortraitProductSectionProps) => {
-
+  additionalServices,
+}: PortraitProductSectionProps) => {
   return (
     <div className="d-none d-sm-block d-md-block d-lg-none">
       <GridContainer className="row">
         <PortraitGridInnerContainer className="col">
-          <ProductImage media={media}/>
+          <ProductImage media={media} />
           <LineSpacer className="row pt1 pb1 border-top border-bottom" />
-          <ProductPrice 
-            price={price} 
-            additionalServices={additionalServices}/>
+          <ProductPrice price={price} additionalServices={additionalServices} />
           <TextMarginContainer className="row">
             <div className="col">
               <H2>Product Information</H2>
@@ -50,10 +47,10 @@ export const PortraitProductSection = ({
             </div>
           </TextMarginContainer>
           <TextMarginContainer className="row">
-            <ProductDescription productInformation={productInformation}/>
+            <ProductDescription productInformation={productInformation} />
           </TextMarginContainer>
         </PortraitGridInnerContainer>
       </GridContainer>
     </div>
-  );
-};
+  )
+}

@@ -1,7 +1,12 @@
 import React from 'react'
 
-import { H1, Loader, PageContainer, GridContainer } from '@lerna-demo/components-styled-atoms'
-import {  GridItemModel, ApiGridItemModel } from '@lerna-demo/utils-types'
+import {
+  H1,
+  Loader,
+  PageContainer,
+  GridContainer,
+} from '@lerna-demo/components-styled-atoms'
+import { GridItemModel, ApiGridItemModel } from '@lerna-demo/utils-types'
 
 import { GridItem } from '../components/GridItem/GridItem'
 import { data } from './data'
@@ -9,10 +14,10 @@ import { data } from './data'
 interface GridPageProps {
   loading: boolean
   gridItems: GridItemModel[]
-};
+}
 
 const HomePage = ({ loading, gridItems }: GridPageProps) => {
-   return loading ? (
+  return loading ? (
     <Loader>Loading Dishwashers</Loader>
   ) : (
     <PageContainer>
@@ -29,32 +34,27 @@ const HomePage = ({ loading, gridItems }: GridPageProps) => {
         </section>
       </main>
     </PageContainer>
-  );
+  )
 }
 
 const buildModel = (apiGridItem: ApiGridItemModel): GridItemModel => {
-  const {
-    productId,
-    price,
-    title,
-    image,
-  } = apiGridItem;
+  const { productId, price, title, image } = apiGridItem
 
-  const { now } = price;
+  const { now } = price
 
   return {
     productId,
     price: `£${now}`,
     title,
     image,
-  };
-};
+  }
+}
 
 export const getStaticProps = async () => {
   const products = data.products as ApiGridItemModel[]
   const firstTwoGridItems = products.slice(0, 2)
   const gridItems = firstTwoGridItems.map(buildModel)
-  return { props: {loading: false, gridItems} }
+  return { props: { loading: false, gridItems } }
 }
 
 export default HomePage

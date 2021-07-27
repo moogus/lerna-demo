@@ -6,8 +6,8 @@
   "author": "Next Gen",
   "prettier": "@lerna-demo/utils-prettier",
   "scripts": {
-    "format:all": "ng-format-all",
-    "format:check": "ng-format-check",
+    "format:all": "format-all",
+    "format:check": "format-check",
     "eslint:check": "echo pass",
     "test:unit:coverage": "echo pass",
     "build": "echo pass"

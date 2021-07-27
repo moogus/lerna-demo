@@ -10,19 +10,19 @@ import {
 
 interface ProductImageProps {
   media: Images
-};
+}
 
-export const ProductImage = ({ media }: ProductImageProps ) => {
-  const [imageUrls, setImageUrls] = useState([]);
-  const [selectedImage, setSelectedImage] = useState("");
+export const ProductImage = ({ media }: ProductImageProps) => {
+  const [imageUrls, setImageUrls] = useState([])
+  const [selectedImage, setSelectedImage] = useState('')
 
-  const { altText = "", urls = [] } = media;
+  const { altText = '', urls = [] } = media
 
   useEffect(() => {
-    setImageUrls(urls.length < 3 ? urls.slice() : urls.slice(0, 3));
-    setSelectedImage(urls[0]);
+    setImageUrls(urls.length < 3 ? urls.slice() : urls.slice(0, 3))
+    setSelectedImage(urls[0])
     // eslint-disable-next-line
-  }, []);
+  }, [])
 
   return (
     <>
@@ -42,7 +42,7 @@ export const ProductImage = ({ media }: ProductImageProps ) => {
             className="d-flex justify-content-center"
             data-testid="image-select-buttons"
           >
-            {imageUrls.map((imageUrl) =>
+            {imageUrls.map(imageUrl =>
               imageUrl === selectedImage ? (
                 <ActiveDotButton key={imageUrl}>&#8226;</ActiveDotButton>
               ) : (
@@ -59,5 +59,5 @@ export const ProductImage = ({ media }: ProductImageProps ) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}

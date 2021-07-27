@@ -1,13 +1,13 @@
 {
   "extends": "../../ts-config/tsconfig.next.json",
-   "include": ["**/**.ts"],
+  "include": ["**/**.ts"],
   "exclude": ["node_modules"],
   "plugins": [
-      {
-        "transform": "typescript-plugin-styled-components",
-        "type": "config",
-        "minify": true,
-        "ssr": true
-      }
-    ]
+    {
+      "transform": "typescript-plugin-styled-components",
+      "type": "config",
+      "minify": true,
+      "ssr": true
+    }
+  ]
 }

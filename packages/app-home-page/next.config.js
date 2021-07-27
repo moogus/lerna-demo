@@ -9,11 +9,11 @@ module.exports = withTM({
     return [
       {
         source: '/home',
-        destination: '/'
+        destination: '/',
       },
       {
         source: '/product/:productId*',
-        destination: 'http://localhost:3001/product/:productId*'
+        destination: 'http://localhost:3001/product/:productId*',
       },
     ]
   },

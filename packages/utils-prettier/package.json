@@ -12,7 +12,7 @@
     "format:all": "echo pass",
     "format:check": "echo pass",
     "eslint:check": "echo pass",
-    "test:unit:coverage": "echo pass",
+    "test:unit": "echo pass",
     "build": "echo pass"
   },
   "dependencies": {

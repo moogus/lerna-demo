@@ -1,7 +1,7 @@
 /* eslint-disable */
 window.matchMedia =
   window.matchMedia ||
-  function() {
+  function () {
     return {
       matches: false,
       addListener: () => {},
