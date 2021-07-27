@@ -1,0 +1,21 @@
+{
+  "name": "@lerna-demo/utils-prettier",
+  "version": "1.0.0",
+  "description": "Code formatting tooling",
+  "main": "index.js",
+  "prettier": "./index.js",
+  "bin": {
+    "format-check": "bin/format-check.sh",
+    "format-all": "bin/format-all.sh"
+  },
+  "scripts": {
+    "format:all": "echo pass",
+    "format:check": "echo pass",
+    "eslint:check": "echo pass",
+    "test:unit:coverage": "echo pass",
+    "build": "echo pass"
+  },
+  "dependencies": {
+    "prettier": "^2.3.2"
+  }
+}

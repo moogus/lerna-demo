@@ -1,0 +1,37 @@
+{
+  "name": "@lerna-demo/components-styled-atoms",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "prettier": "@lerna-demo/utils-prettier",
+  "scripts": {
+    "eslint:check": "eslint --ext .jsx,.js,.ts,.tsx .",
+    "eslint:fix": "eslint --ext js,jsx,ts,tsx --fix",
+    "format:all": "format-all",
+    "format:check": "format-check",
+    "ts:check": "tsc",
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watchAll"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "styled-components": "^5.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "8.1.0",
+    "@testing-library/jest-dom": "5.14.1",
+    "@testing-library/react": "12.0.0",
+    "@testing-library/user-event": "13.2.1",
+    "@types/react": "17.0.15",
+    "@types/react-dom": "17.0.9",
+    "@types/styled-components": "^5.1.11",
+    "@typescript-eslint/parser": "4.28.5",
+    "babel-jest": "27.0.6",
+    "eslint-plugin-better-styled-components": "^1.1.2",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "typescript-plugin-styled-components": "^2.0.0"
+  }
+}

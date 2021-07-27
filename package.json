@@ -1,0 +1,54 @@
+{
+  "name": "@lerna-demo/main",
+  "private": true,
+  "prettier": "@lerna-demo/utils-prettier",
+   "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "eslint:check": "lerna run eslint:check",
+    "format:all": "lerna run format:all",
+    "format:check": "lerna run format:check",
+    "ts:check": "lerna run ts:check",
+    "test": "yarn test:unit",
+    "test:unit": "lerna run test:unit",
+    "husky-commit-msg": "lint-staged",
+    "husky-pre-push": "yarn ts:check && yarn test:unit",
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "start": "lerna run start"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md,json}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.{jsx,js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "ts-node": "10.1.0"
+  },
+  "devDependencies": {
+    "@lerna-demo/babel-config": "1.0.0",
+    "@lerna-demo/utils-jest": "1.0.0",
+    "@lerna-demo/utils-prettier": "1.0.0",
+    "@types/node": "16.4.3",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "eslint": "7.31.0",
+    "chalk": "^4.1.1",
+    "husky": "7.0.1",
+    "lerna": "^4.0.0",
+    "lint-staged": "^11.1.1",
+    "jest": "27.0.6",
+    "ts-jest": "27.0.4",
+    "typescript": "4.3.5"
+  },
+  "engines": {
+    "node": ">=16.*",
+    "yarn": ">=1.22.*"
+  }
+}

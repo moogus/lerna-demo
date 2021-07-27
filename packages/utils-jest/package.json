@@ -1,0 +1,12 @@
+{
+  "name": "@lerna-demo/utils-jest",
+  "version": "1.0.0",
+  "description": "Jest Util",
+  "private": true,
+  "scripts": {
+    "eslint:check": "eslint --ext .jsx,.js,.ts,.tsx .",
+    "eslint:fix": "eslint --ext js,jsx,ts,tsx --fix",
+    "format:all": "ng-format-all",
+    "format:check": "ng-format-check"
+  }
+}

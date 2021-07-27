@@ -1,0 +1,15 @@
+{
+  "name": "@lerna-demo/utils-types",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.ts",
+  "prettier": "@lerna-demo/utils-prettier",
+  "scripts": {
+    "eslint:check": "eslint --ext .jsx,.js,.ts,.tsx .",
+    "eslint:fix": "eslint --ext js,jsx,ts,tsx --fix",
+    "format:all": "format-all",
+    "format:check": "format-check",
+    "ts:check": "tsc",
+    "test:unit": "echo pass"
+  }
+}

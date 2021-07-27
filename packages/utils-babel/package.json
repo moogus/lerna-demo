@@ -1,0 +1,24 @@
+{
+  "name": "@lerna-demo/babel-config",
+  "version": "1.0.0",
+  "description": "Babel config",
+  "main": "index.js",
+  "author": "Next Gen",
+  "prettier": "@lerna-demo/utils-prettier",
+  "scripts": {
+    "format:all": "ng-format-all",
+    "format:check": "ng-format-check",
+    "eslint:check": "echo pass",
+    "test:unit:coverage": "echo pass",
+    "build": "echo pass"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5"
+  },
+  "devDependencies": {
+    "@lerna-demo/utils-prettier": "1.0.0"
+  }
+}
