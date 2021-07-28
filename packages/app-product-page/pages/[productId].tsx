@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 
 import {
   H1,
+  Loader,
   PageContainer,
   NavigateBackButton,
 } from '@lerna-demo/components-styled-atoms'
@@ -10,7 +11,7 @@ import { ApiProductModel, ProductModel } from '@lerna-demo/utils-types'
 
 import { PortraitProductSection } from '../components/PortraitProductSection'
 import { LandscapeProductSection } from '../components/LanscapeProductSection'
-import { data } from './data'
+import { data } from '../data/data'
 
 interface ProductPageProps {
   loading: boolean
@@ -21,7 +22,7 @@ interface ProductPageProps {
 const Product = ({ product }: ProductPageProps) => {
   const router = useRouter()
 
-  return (
+  return product ? (
     <PageContainer>
       <header>
         <div className="d-flex justify-content-start">
@@ -38,6 +39,8 @@ const Product = ({ product }: ProductPageProps) => {
         </section>
       </main>
     </PageContainer>
+  ) : (
+    <Loader>Loading Dishwashers</Loader>
   )
 }
 
@@ -81,7 +84,6 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params: { productId } }) => {
   const product = buildModel(data)
-  debugger
   return { props: { loading: false, product, productId } }
 }
 

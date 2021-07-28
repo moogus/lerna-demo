@@ -9,17 +9,15 @@ import {
 import { GridItemModel, ApiGridItemModel } from '@lerna-demo/utils-types'
 
 import { GridItem } from '../components/GridItem/GridItem'
-import { data } from './data'
+import { data } from '../data/data'
 
 interface GridPageProps {
   loading: boolean
   gridItems: GridItemModel[]
 }
 
-const HomePage = ({ loading, gridItems }: GridPageProps) => {
-  return loading ? (
-    <Loader>Loading Dishwashers</Loader>
-  ) : (
+const HomePage = ({ gridItems }: GridPageProps) => {
+  return gridItems ? (
     <PageContainer>
       <header>
         <H1 className="pt-5 pb-5">Dishwashers (114)</H1>
@@ -34,6 +32,8 @@ const HomePage = ({ loading, gridItems }: GridPageProps) => {
         </section>
       </main>
     </PageContainer>
+  ) : (
+    <Loader>Loading Dishwashers</Loader>
   )
 }
 
